@@ -1,0 +1,99 @@
+TITLE HITBALL (EXE)
+.MODEL SMALL
+.STACK 200H
+;-----------------------------------
+.DATA
+HOME DB 'hb-menu.txt', 00H
+ERROR_STR DB "Error!$"
+FILE_HANDLE	DW ?
+FILE_BUFFER	DB 1896 DUP('$')
+ROW DB 0
+COL DB 0
+;-----------------------------------
+.CODE
+MAIN PROC FAR
+	MOV AX, @data
+	MOV DS, AX
+
+	CALL GAME_LOOP
+	EXIT:
+    	MOV   AX, 4C00H
+	    INT   21H
+MAIN ENDP
+;-----------------------------------
+GAME_LOOP PROC NEAR
+	MAIN_GAME:
+		CALL DISP_HOME
+
+        RET
+
+GAME_LOOP ENDP
+;-----------------------------------
+DISP_HOME PROC NEAR												;DISPLAY MENU SCREEN
+	MOV ROW, 0
+	MOV COL, 0
+	CALL SET_CURS
+	CALL CLS
+	LEA DX, HOME
+	CALL FILE_READ
+	;JMP 		MENU_CH
+	RET
+DISP_HOME ENDP
+;-----------------------------------
+FILE_READ PROC NEAR
+	MOV AX, 3D02H											;OPEN FILE
+	INT	21H
+	JC _ERROR
+	MOV FILE_HANDLE, AX
+	
+	MOV AH, 3FH												;READ FILE
+	MOV	BX, FILE_HANDLE
+	MOV	CX, 1896
+	LEA	DX, FILE_BUFFER
+	INT	21H
+	JC _ERROR
+	
+	MOV DX, 0500H											;DISPLAY FILE
+	CALL SET_CURS
+	LEA DX, FILE_BUFFER
+	CALL DISPLAY
+
+	MOV AH, 3EH         							;CLOSE FILE
+	MOV BX, FILE_HANDLE
+	INT 21H
+	JC _ERROR
+
+	RET
+
+_ERROR:		
+	LEA DX, ERROR_STR									;ERROR IN FILE OPERATION
+	CALL DISPLAY
+	RET
+BK:			
+	RET
+FILE_READ ENDP
+;-------------------------------------
+DISPLAY PROC NEAR
+	MOV AH, 09H
+	INT 21H
+	RET
+DISPLAY ENDP
+;-------------------------------------
+SET_CURS PROC NEAR
+	MOV	AH, 02H
+	MOV	BH, 00
+	MOV	DH, ROW
+	MOV DL, COL
+	INT 10H
+	RET
+SET_CURS 			ENDP
+;-------------------------------------
+CLS PROC NEAR			
+	MOV	AX, 0600H
+	MOV	BH, 01H
+	MOV	CX, 0000H
+	MOV DX, 184FH
+	INT 10H
+	RET
+CLS ENDP
+END MAIN
