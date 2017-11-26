@@ -1,24 +1,23 @@
-		
-		  #########################################################
-	   	  # ----------------------------------------------------- #
-		  #|				     HOW TO PLAY					 |#
-		  #|	HitBall is a 2-player game that is very similar  |#
-		  #|	to dodgeball.									 |#
-	      #|                                                     |#
-	      #|	The objective of the game is to throw all your   |#
-	      #|	balls to your opponent's side and if your        |#
-	      #|	opponent gets hit in the process, he will not be |#
-	      #|	able to move for a while. The player with no     |#
-	      #|	balls left on his side will be the victor and he |#
-	      #|	will be crowned as the best HITBALLER alive.     |#
-	      #|	                                                 |#
-	      #|	NOTE: This is just a game and the developers     |#
-	      #|		  hope that this game will not ruin any      |#
-	      #|		  friendships                                |#
-	      # ----------------------------------------------------- #
-	      #########################################################
+           
+           #########################################################
+           # ----------------------------------------------------- #
+           #|                     HOW TO PLAY                     |#
+           #|    HitBall is a 2-player game that is very similar  |#
+           #|    to dodgeball.                                    |#
+           #|                                                     |#
+           #|    The objective of the game is to throw all your   |#
+           #|    balls to your opponent's side and if your        |#
+           #|    opponent gets hit in the process, he will not be |#
+           #|    able to move for a while. The player with no     |#
+           #|    balls left on his side will be the victor and he |#
+           #|    will be crowned as the best HITBALLER alive.     |#
+           #|                                                     |#
+           #|    NOTE: This is just a game and the developers     |#
+           #|          hope that this game will not ruin any      |#
+           #|          friendships                                |#
+           # ----------------------------------------------------- #
+           #########################################################
 
-	      					#####################
-	      					# ----------------- #
-	      					# BACK TO MAIN MENU #
-	      					#####################
+                             #####################
+                             # BACK TO MAIN MENU #
+                             #####################
