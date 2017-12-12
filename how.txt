@@ -12,9 +12,9 @@
            #|    balls left on his side will be the victor and he |#
            #|    will be crowned as the best HITBALLER alive.     |#
            #|                                                     |#
-           #|    NOTE: This is just a game and the developers     |#
-           #|          hope that this game will not ruin any      |#
-           #|          friendships                                |#
+           #|    Controls:                                        |#
+           #|    Player 1 - Arrow Keys to Move and / to throw     |#
+           #|    Player 2 - W, A, S, D to Move and R to throw     |#
            # ----------------------------------------------------- #
            #########################################################
 
